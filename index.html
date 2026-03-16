@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gracias por tu compra 🌷</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:url("background.png");
+background-size:cover;
+background-position:center;
+padding:20px;
+}
+
+.container{
+max-width:420px;
+margin:auto;
+background:white;
+border-radius:14px;
+padding:25px;
+box-shadow:0 10px 35px rgba(0,0,0,0.25);
+text-align:center;
+}
+
+.confirm{
+background:#e9fff1;
+border:2px solid #b9f3c9;
+padding:18px;
+border-radius:10px;
+margin-bottom:25px;
+}
+
+.confirm p{
+margin:0;
+font-size:15px;
+}
+
+.confirm h2{
+margin:6px 0;
+}
+
+.drive-btn{
+display:block;
+background:#2ecc71;
+color:white;
+padding:14px;
+border-radius:8px;
+text-decoration:none;
+font-weight:bold;
+margin-top:12px;
+}
+
+.drive-btn:hover{
+background:#27ae60;
+}
+
+h1{
+font-size:26px;
+color:#d65a7a;
+}
+
+p{
+color:#444;
+font-size:16px;
+line-height:1.5;
+}
+
+.produto{
+width:100%;
+border-radius:12px;
+margin:15px 0;
+}
+
+.video{
+margin-top:15px;
+}
+
+.video video{
+width:100%;
+border-radius:10px;
+}
+
+.timer{
+font-size:32px;
+font-weight:bold;
+color:#e74c3c;
+margin:10px 0;
+}
+
+.buy{
+display:block;
+background:#ff5a7d;
+color:white;
+padding:16px;
+border-radius:10px;
+text-decoration:none;
+font-weight:bold;
+font-size:18px;
+margin-top:10px;
+}
+
+.buy:hover{
+background:#e0486a;
+}
+
+.skip{
+margin-top:12px;
+font-size:14px;
+color:#777;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="confirm">
+
+<p style="color:#2a8c4a;font-weight:bold">
+✅ Compra confirmada
+</p>
+
+<h2>¡Tu compra está lista! 🌷</h2>
+
+<p>
+Gracias por confiar en este detalle tan especial.
+Primero accede a tu producto principal.
+Después mira la oferta exclusiva que preparé para complementar tu regalo con un toque aún más inolvidable.
+</p>
+
+<a class="drive-btn"
+href="LINK_DO_DRIVE"
+target="_blank">
+
+Abrir mi producto principal 💌
+
+</a>
+
+</div>
+
+<h1>Mira antes de comenzar ❤️</h1>
+
+<p>
+
+Antes de continuar, puedes llevar también esta hermosa
+
+<strong>Caja Sorpresa en Forma de Corazón</strong>
+
+que complementa perfectamente tu regalo.
+
+</p>
+
+<img src="produto-upsell.png" class="produto">
+
+<div class="video">
+
+<video controls autoplay muted playsinline>
+
+<source src="caja-de-corazon.mp4" type="video/mp4">
+
+Tu navegador no soporta video.
+
+</video>
+
+</div>
+
+<p>
+
+✔ Diseño 3D de caja en forma de corazón  
+✔ Plantillas fáciles de montar  
+✔ Guía básica paso a paso  
+✔ Descarga inmediata  
+
+</p>
+
+<p><strong>Oferta especial por tiempo limitado</strong></p>
+
+<div class="timer" id="timer">05:00</div>
+
+<a class="buy"
+href="LINK_CHECKOUT_UPSELL">
+
+Quiero añadir esta sorpresa ❤️
+
+</a>
+
+<p class="skip">
+o continuar solo con mi compra
+</p>
+
+</div>
+
+<script>
+
+let tiempo = 300;
+
+function actualizar(){
+
+let minutos = Math.floor(tiempo/60);
+let segundos = tiempo%60;
+
+if(segundos < 10){
+segundos = "0" + segundos;
+}
+
+document.getElementById("timer").innerHTML =
+minutos + ":" + segundos;
+
+tiempo--;
+
+if(tiempo < 0){
+tiempo = 0;
+}
+
+}
+
+setInterval(actualizar,1000);
+
+</script>
+
+</body>
+
+</html>
