@@ -1,350 +1,148 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Gracias por tu compra | Oferta especial</title>
-  <meta name="description" content="Gracias por tu compra. Accede a tu producto principal y aprovecha esta oferta especial por tiempo limitado." />
-  <style>
-    :root{
-      --rose:#e87ea0;
-      --rose-dark:#cf5f84;
-      --rose-soft:#fff1f6;
-      --text:#3d2b33;
-      --muted:#735f67;
-      --card:rgba(255,255,255,.88);
-      --line:rgba(255,255,255,.45);
-      --gold:#ffb84d;
-      --green:#25a865;
-      --shadow:0 18px 45px rgba(114, 57, 79, 0.18);
-      --radius:24px;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{
-      font-family: Arial, Helvetica, sans-serif;
-      color:var(--text);
-      min-height:100vh;
-      background:
-        linear-gradient(rgba(255,247,250,.66), rgba(255,247,250,.90)),
-        url('./background.png') center/cover no-repeat fixed;
-    }
+<title>Oferta Especial ❤️</title>
 
-    .page{
-      width:100%;
-      max-width:460px;
-      margin:0 auto;
-      padding:18px 14px 28px;
-    }
+<style>
 
-    .glass{
-      background:var(--card);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border:1px solid rgba(255,255,255,.5);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-    }
+body{
+margin:0;
+font-family: Arial, sans-serif;
+background:url("background.png");
+background-size:cover;
+background-position:center;
+text-align:center;
+padding:20px;
+}
 
-    .hero{
-      padding:18px;
-      text-align:center;
-    }
+.container{
+max-width:420px;
+margin:auto;
+background:white;
+padding:25px;
+border-radius:14px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
 
-    .badge{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      background:#ecfff4;
-      color:var(--green);
-      border:1px solid rgba(37,168,101,.18);
-      border-radius:999px;
-      padding:9px 14px;
-      font-size:13px;
-      font-weight:700;
-      margin-bottom:14px;
-    }
+h1{
+font-size:26px;
+color:#c94f6d;
+}
 
-    h1{
-      font-size:30px;
-      line-height:1.08;
-      margin-bottom:10px;
-      letter-spacing:-.3px;
-    }
+p{
+font-size:16px;
+color:#444;
+line-height:1.5;
+}
 
-    .lead{
-      color:var(--muted);
-      font-size:16px;
-      line-height:1.55;
-      margin-bottom:16px;
-    }
+.produto{
+width:100%;
+border-radius:10px;
+margin-top:15px;
+}
 
-    .main-btn, .secondary-btn{
-      display:block;
-      width:100%;
-      text-align:center;
-      text-decoration:none;
-      font-weight:800;
-      border-radius:18px;
-      padding:16px 18px;
-      transition:.2s ease;
-    }
+.timer{
+font-size:28px;
+font-weight:bold;
+color:#e74c3c;
+margin:15px 0;
+}
 
-    .main-btn{
-      background:linear-gradient(180deg,var(--rose),var(--rose-dark));
-      color:#fff;
-      box-shadow:0 14px 24px rgba(207,95,132,.28);
-    }
+.btn{
+display:block;
+background:#ff5a7d;
+color:white;
+text-decoration:none;
+padding:16px;
+border-radius:8px;
+font-size:18px;
+margin-top:15px;
+font-weight:bold;
+}
 
-    .secondary-btn{
-      margin-top:10px;
-      background:#fff;
-      color:var(--rose-dark);
-      border:2px solid rgba(232,126,160,.28);
-    }
+.btn:hover{
+background:#e04769;
+}
 
-    .main-btn:active,.secondary-btn:active{transform:scale(.985)}
+.secundario{
+margin-top:10px;
+font-size:14px;
+color:#777;
+}
 
-    .section{
-      margin-top:16px;
-      padding:18px;
-    }
-
-    .section h2{
-      font-size:24px;
-      margin-bottom:8px;
-      text-align:center;
-    }
-
-    .section p{
-      color:var(--muted);
-      font-size:15px;
-      line-height:1.6;
-    }
-
-    .product-wrap{
-      margin-top:14px;
-      border-radius:20px;
-      overflow:hidden;
-      background:#fff;
-      box-shadow:0 12px 24px rgba(184,107,132,.15);
-    }
-
-    .product-wrap img{
-      display:block;
-      width:100%;
-      height:auto;
-    }
-
-    .timer-box{
-      margin-top:14px;
-      background:linear-gradient(180deg,#fff3f7,#fff9fb);
-      border:1px solid rgba(232,126,160,.22);
-      border-radius:20px;
-      padding:16px 14px;
-      text-align:center;
-    }
-
-    .timer-box strong{
-      display:block;
-      font-size:15px;
-      margin-bottom:12px;
-      color:#8b4560;
-    }
-
-    .timer{
-      display:flex;
-      justify-content:center;
-      gap:10px;
-    }
-
-    .time-card{
-      min-width:92px;
-      background:#fff;
-      border:1px solid rgba(232,126,160,.2);
-      border-radius:16px;
-      padding:12px 8px;
-      box-shadow:0 8px 20px rgba(232,126,160,.10);
-    }
-
-    .time-num{
-      display:block;
-      font-size:30px;
-      font-weight:900;
-      line-height:1;
-      color:var(--rose-dark);
-    }
-
-    .time-label{
-      display:block;
-      margin-top:6px;
-      font-size:11px;
-      letter-spacing:.7px;
-      text-transform:uppercase;
-      color:var(--muted);
-    }
-
-    .offer-title{
-      font-size:28px;
-      line-height:1.08;
-      text-align:center;
-      margin-top:14px;
-      margin-bottom:8px;
-    }
-
-    .offer-copy{
-      text-align:center;
-      font-size:16px;
-      color:var(--muted);
-      margin-bottom:14px;
-    }
-
-    .benefits{
-      list-style:none;
-      display:grid;
-      gap:10px;
-      margin:14px 0 16px;
-    }
-
-    .benefits li{
-      display:flex;
-      gap:10px;
-      align-items:flex-start;
-      background:rgba(255,255,255,.7);
-      border:1px solid rgba(232,126,160,.14);
-      border-radius:16px;
-      padding:12px 12px;
-      color:#5f4a52;
-      font-size:14px;
-      line-height:1.45;
-    }
-
-    .benefits li span{font-size:18px; line-height:1}
-
-    .price-box{
-      margin:12px 0 16px;
-      background:linear-gradient(180deg,#fff,#fff5f8);
-      border-radius:18px;
-      border:1px solid rgba(232,126,160,.18);
-      padding:16px;
-      text-align:center;
-    }
-
-    .old-price{
-      color:#aa8b97;
-      font-size:16px;
-      text-decoration:line-through;
-      margin-bottom:4px;
-    }
-
-    .new-price{
-      font-size:42px;
-      font-weight:900;
-      color:var(--rose-dark);
-      line-height:1;
-    }
-
-    .small-note{
-      margin-top:7px;
-      color:var(--muted);
-      font-size:13px;
-    }
-
-    .warning{
-      text-align:center;
-      margin-top:12px;
-      font-size:13px;
-      color:#8b4560;
-    }
-
-    .footer-note{
-      text-align:center;
-      color:#7f6b73;
-      font-size:12px;
-      padding:12px 8px 0;
-    }
-  </style>
+</style>
 </head>
+
 <body>
-  <main class="page">
-    <section class="hero glass">
-      <div class="badge">✅ Compra confirmada</div>
-      <h1>¡Tu compra está lista! 🌷</h1>
-      <p class="lead">
-        Gracias por confiar en este detalle tan especial. Primero, accede a tu producto principal.
-        Después, mira la oferta exclusiva que preparé para complementar tu regalo con un toque aún más inolvidable.
-      </p>
-      <a class="main-btn" href="SEU_LINK_DO_DRIVE" target="_blank" rel="noopener noreferrer">Abrir mi producto principal 💌</a>
-    </section>
 
-    <section class="section glass">
-      <h2>Mira antes de comenzar 💖</h2>
-      <p style="text-align:center;">
-        Si quieres que tu entrega se vea todavía más sorprendente, esta <strong>Caja Sorpresa en Forma de Corazón</strong>
-        es el complemento perfecto para presentar tu regalo con más emoción, más encanto y más valor percibido.
-      </p>
+<div class="container">
 
-      <div class="product-wrap">
-        <img src="./upsell-product.png" alt="Caja Sorpresa en Forma de Corazón" />
-      </div>
+<h1>Mira antes de comenzar ❤️</h1>
 
-      <div class="timer-box">
-        <strong>⏳ Esta oferta especial desaparece cuando termine el tiempo</strong>
-        <div class="timer" id="timer">
-          <div class="time-card">
-            <span class="time-num" id="minutes">10</span>
-            <span class="time-label">Minutos</span>
-          </div>
-          <div class="time-card">
-            <span class="time-num" id="seconds">00</span>
-            <span class="time-label">Segundos</span>
-          </div>
-        </div>
-      </div>
+<p>
+Antes de acceder a tu producto principal,
+puedes llevar también esta
+<strong>Caja Sorpresa en Forma de Corazón</strong>.
+</p>
 
-      <h3 class="offer-title">Añade ahora tu upsell romántico ❤️</h3>
-      <p class="offer-copy">
-        No entregues solo un PDF. Entrega una experiencia. Esta caja en forma de corazón convierte un archivo bonito
-        en una sorpresa física que emociona desde el primer segundo.
-      </p>
+<img src="produto-upsell.png" class="produto">
 
-      <ul class="benefits">
-        <li><span>📦</span><div><strong>Presentación que impacta:</strong> ideal para guardar mensajes, recuerdos o pequeños detalles dentro de una caja que enamora a primera vista.</div></li>
-        <li><span>🖨️</span><div><strong>Lista para imprimir:</strong> el material incluye plantillas pensadas para impresión y armado sencillo.</div></li>
-        <li><span>✂️</span><div><strong>Fácil de montar:</strong> el material destaca diseño 3D, plantillas fáciles y guía básica paso a paso. </div></li>
-        <li><span>🎁</span><div><strong>Perfecta para regalar:</strong> combina muy bien con propuestas románticas, fechas especiales y detalles con intención.</div></li>
-      </ul>
+<p>
 
-      <div class="price-box">
-        <div class="old-price">De $12,90</div>
-        <div class="new-price">$5,90</div>
-        <div class="small-note">Pago único • Acceso inmediato</div>
-      </div>
+Un complemento perfecto para tu regalo.
 
-      <a class="main-btn" href="SEU_LINK_DO_CHECKOUT_UPSELL" target="_blank" rel="noopener noreferrer">Sí, quiero comprar este upsell ahora 💘</a>
-      <a class="secondary-btn" href="SEU_LINK_DO_DRIVE" target="_blank" rel="noopener noreferrer">No, prefiero seguir solo con mi compra</a>
-      <p class="warning">Oferta disponible solo en esta página de gracias.</p>
-    </section>
+✔ Diseño 3D de caja en forma de corazón  
+✔ Plantillas fáciles de montar  
+✔ Guía básica paso a paso  
+✔ Ideal para sorprender a alguien especial
 
-    <p class="footer-note">Reemplaza los links del producto principal y del checkout del upsell antes de publicar.</p>
-  </main>
+</p>
 
-  <script>
-    (function(){
-      let total = 10 * 60;
-      const m = document.getElementById('minutes');
-      const s = document.getElementById('seconds');
-      function paint(){
-        const minutes = Math.floor(total / 60);
-        const seconds = total % 60;
-        m.textContent = String(minutes).padStart(2,'0');
-        s.textContent = String(seconds).padStart(2,'0');
-        if(total > 0) total--;
-      }
-      paint();
-      setInterval(paint, 1000);
-    })();
-  </script>
+<p><strong>Oferta disponible solo ahora</strong></p>
+
+<div class="timer" id="timer">05:00</div>
+
+<a href="LINK_CHECKOUT_UPSELL" class="btn">
+Quiero añadir esta sorpresa ❤️
+</a>
+
+<p class="secundario">
+o continuar solo con mi compra
+</p>
+
+</div>
+
+<script>
+
+let tiempo = 300;
+
+function actualizar(){
+
+let minutos = Math.floor(tiempo/60);
+let segundos = tiempo%60;
+
+if(segundos<10){
+segundos="0"+segundos;
+}
+
+document.getElementById("timer").innerHTML=
+minutos+":"+segundos;
+
+tiempo--;
+
+if(tiempo<0){
+tiempo=0;
+}
+
+}
+
+setInterval(actualizar,1000);
+
+</script>
+
 </body>
 </html>
